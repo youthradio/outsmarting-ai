@@ -1,7 +1,8 @@
 <template>
   <article class="accordian" :class="accordianClasses">
     <div class="accordian-header" @click="toggleAccordion">
-      {{ accordianTitle }} <span class="accordianIcon" :class="accordianClasses" />
+      <!-- <span v-html="{ accordianTitle }" /> 'works' but shoots out raw json markup and, as usual, isn't safe -->
+      {{ accordianTitle }}<span class="accordianIcon" :class="accordianClasses" />
     </div>
     <div class="accordian-body">
       <div class="accordian-content">
