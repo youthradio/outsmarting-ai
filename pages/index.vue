@@ -2,9 +2,9 @@
   <div class="container">
     <HeaderContainer />
     <article>
-      <AccordianContainer :accordian-title="articleData.sections[0].title" />
-      <AccordianContainer :accordian-title="articleData.sections[1].title" />
-      <AccordianContainer :accordian-title="articleData.sections[2].title" />
+      <AccordianContainer :accordian-body="articleData.sections[0].content" :accordian-title="articleData.sections[0].title" />
+      <AccordianContainer :accordian-body="articleData.sections[1].content" :accordian-title="articleData.sections[1].title" />
+      <AccordianContainer :accordian-body="articleData.sections[2].content" :accordian-title="articleData.sections[2].title" />
       <p v-html="articleData.leading" />
       <p v-html="articleData.leading2" />
       <p v-html="articleData.leading3" />

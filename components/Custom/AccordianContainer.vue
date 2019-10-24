@@ -6,7 +6,7 @@
     </div>
     <div class="accordian-body">
       <div class="accordian-content">
-        Test Content but much longer and filling up the space in the component
+        {{ accordianBody }}
       </div>
     </div>
   </article>
