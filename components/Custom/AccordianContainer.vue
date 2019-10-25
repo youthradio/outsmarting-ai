@@ -1,11 +1,11 @@
 <template>
   <article class="accordian" :class="accordianClasses">
     <div class="accordian-header" @click="toggleAccordion">
-      <span v-html=" accordianTitle " /> <span class="accordianIcon" :class="accordianClasses" />
+      <span class="titleSource" v-html=" accordianTitle " /> <span class="accordianIcon" :class="accordianClasses" />
     </div>
     <div class="accordian-body">
       <div class="accordian-content">
-        <span v-html=" accordianBody " />
+        <span class="bodySource" v-html=" accordianBody " />
       </div>
     </div>
   </article>
