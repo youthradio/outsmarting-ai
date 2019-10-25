@@ -1,22 +1,22 @@
 <template>
   <div>
-    <FeatureHeader
+    <!--<FeatureHeader
       :header-data="headerData"
       @onHeaderImgHeight="setHeaderHeight"
-    />
-    <MenuHeader :offset="headerImageHeight" />
+    />-->
+    <MenuHeader :offset="0" />
   </div>
 </template>
 
 <script>
 import POSTCONFIG from '../../post.config'
 import MenuHeader from './MenuHeader'
-import FeatureHeader from './FeatureHeader'
+// import FeatureHeader from './FeatureHeader'
 
 export default {
   name: 'HeadContainer',
   components: {
-    FeatureHeader,
+    // FeatureHeader,
     MenuHeader
   },
   data () {
