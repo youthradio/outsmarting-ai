@@ -3,6 +3,9 @@
     <HeaderContainer />
     <div class="article-body">
       <article class="main-body">
+        <h3 class="sub-header">
+          COMING SOON
+        </h3>
         <h2 class="body-header">
           OUTSMARTING AI
         </h2>
@@ -104,6 +107,20 @@ grid-row-gap: 0px;
   border-bottom: 6px solid $green;
   padding: 0;
   line-height: 2rem;
+
+  color: $green;
+  font-family: "Days Sans", sans-serif;
+  letter-spacing: 0;
+}
+.sub-header{
+  display: inline-block;
+  padding: .5rem 0.5rem;
+  margin: 0rem 0rem 1rem 0rem;
+  background-color: $green;
+
+  color: #000;
+  font-family: "Days Sans", sans-serif;
+  letter-spacing: 0;
 }
 .img-body {
   order: 1;
