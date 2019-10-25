@@ -2,12 +2,12 @@
   <div>
     <article class="accordian" :class="accordianClasses">
       <div class="accordian-header" @click="toggleAccordion">
-        <span class="titleSource" v-html=" accordianTitle " /> <span class="accordianIcon" :class="accordianClasses" />
+        <span class="title-source" v-html=" accordianTitle " /> <span class="accordian-icon" :class="accordianClasses" />
       </div>
       <div class="accordian-border">
         <div class="accordian-body">
           <div class="accordian-content">
-            <span class="bodySource" v-html=" accordianBody " />
+            <div class="body-source" v-html=" accordianBody " />
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ export default {
     max-width: 100%;
 }
 .is-closed .accordian-border{
-  transition: 0.2s ease all;
+    transition: 0.2s ease all;
     background-color: #00EBAB;
     padding: 0rem;
 }
@@ -87,13 +87,13 @@ export default {
   background-color: #00EBAB;
 }
 
-.is-closed .accordianIcon:after{
+.is-closed .accordian-icon:after{
     content: '▾';
     position: relative;
     pointer-events: none;
 }
 
-.is-primary .accordianIcon:after{
+.is-primary .accordian-icon:after{
     content: '▴';
     position: relative;
     pointer-events: none;
