@@ -130,7 +130,10 @@ grid-row-gap: 0px;
     }
 }
 .article-img{
-  position: fixed;
+  position: relative;
+  @include breakpoint (medium){
+    position: fixed;
+  }
   width: 100%;
   height: 100vh;
   object-fit: fill;
