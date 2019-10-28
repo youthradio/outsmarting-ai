@@ -124,6 +124,7 @@ grid-row-gap: 0px;
 }
 .img-body {
   order: 1;
+  z-index: 0;
   @include breakpoint (medium){
       order: 2;
     }

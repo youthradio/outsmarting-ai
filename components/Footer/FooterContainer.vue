@@ -19,6 +19,8 @@ export default {
 
 <style scoped lang="scss">
 footer{
+  position: relative;
   margin-top: 1rem;
+  z-index: 1000
 }
 </style>
