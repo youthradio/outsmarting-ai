@@ -106,9 +106,7 @@ export default {
 }
 
 .accordian-body{
-    max-height: 10rem;
     background-color: $white;
-    overflow-y: scroll;
     overflow-x: hidden;
     transition: 0.2s ease all;
 }
