@@ -21,7 +21,7 @@
       </div>
     </div>
     <ShareContainer />
-    <RelatedPostsContainer />
+    <!-- <RelatedPostsContainer /> -->
     <FooterContainer />
   </div>
 </template>
@@ -30,7 +30,7 @@
 
 import ArticleData from '../data/data.json'
 import CommonUtils from '../mixins/CommonUtils'
-import RelatedPostsContainer from '~/components/RelatedPosts/RelatedPostsContainer'
+// import RelatedPostsContainer from '~/components/RelatedPosts/RelatedPostsContainer'
 // import MapContainer from '~/components/Map/MapContainer'
 import HeaderContainer from '~/components/Header/HeaderContainer'
 import AccordianContainer from '~/components/Custom/AccordianContainer'
@@ -39,7 +39,7 @@ import FooterContainer from '~/components/Footer/FooterContainer'
 
 export default {
   components: {
-    RelatedPostsContainer,
+    // RelatedPostsContainer,
     // MapContainer,
     HeaderContainer,
     ShareContainer,
@@ -129,8 +129,9 @@ grid-row-gap: 0px;
     }
 }
 .article-img{
+  position: fixed;
   width: 100%;
-  height: auto;
+  height: 100vh;
   object-fit: fill;
 }
 </style>
