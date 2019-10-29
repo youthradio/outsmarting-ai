@@ -2,7 +2,7 @@
   <div class="container">
     <HeaderContainer />
     <div class="article-body">
-      <article class="main-body">
+      <div class="main-body">
         <h3 class="sub-header">
           COMING SOON
         </h3>
@@ -12,12 +12,18 @@
         <p v-html="articleData.leading" />
         <p v-html="articleData.leading2" />
         <p v-html="articleData.leading3" />
-        <AccordianContainer :accordian-body="articleData.sections[0].content" :accordian-title="articleData.sections[0].title" />
-        <AccordianContainer :accordian-body="articleData.sections[1].content" :accordian-title="articleData.sections[1].title" />
-        <AccordianContainer :accordian-body="articleData.sections[2].content" :accordian-title="articleData.sections[2].title" />
-      </article>
-      <div class="img-body ">
-        <img class="img-fluid article-img" src="~/assets/images/article-bg.png">
+        <AccordianContainer
+          v-for="article in articleData.sections"
+          :key="article.content"
+          :accordian-body="article.content"
+          :accordian-title="article.title"
+        />
+      </div>
+      <div class="img-body">
+        <img
+          class="article-img"
+          src="~/assets/images/article-bg.png"
+        >
       </div>
     </div>
     <ShareContainer />
@@ -75,34 +81,31 @@ export default {
 <style lang="scss" scoped>
 @import "~@/css/vars";
 @import "~@/css/base";
-@import '~@/css/mixins';
+@import "~@/css/mixins";
 
-.article-body{
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: 1fr;
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-@include breakpoint (medium){
-      grid-template-columns: 1.6fr 1fr;
-      grid-template-rows: 1fr;
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
-      }
-    }
+.article-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  @include breakpoint(medium) {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
 .main-body {
   order: 2;
   background-color: $white;
-  padding-left: calc(1.5rem + 10px);
-  padding-right: 0;
-  p, div{
-        padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  p,
+  div {
+    padding-right: 1.5rem;
   }
-  @include breakpoint (medium){
-      order: 1;
-    }
+  @include breakpoint(medium) {
+    order: 1;
+  }
 }
-.body-header{
+.body-header {
   width: 100%;
   border-bottom: 6px solid $green;
   padding: 0;
@@ -112,9 +115,9 @@ grid-row-gap: 0px;
   font-family: "Days Sans", sans-serif;
   letter-spacing: 0;
 }
-.sub-header{
+.sub-header {
   display: inline-block;
-  padding: .5rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   margin: 0rem 0rem 1rem 0rem;
   background-color: $green;
 
@@ -125,17 +128,19 @@ grid-row-gap: 0px;
 .img-body {
   order: 1;
   z-index: 0;
-  @include breakpoint (medium){
-      order: 2;
-    }
-}
-.article-img{
-  position: relative;
-  @include breakpoint (medium){
-    position: fixed;
+  @include breakpoint(medium) {
+    order: 2;
   }
-  width: 100%;
-  height: 100vh;
-  object-fit: fill;
+}
+.article-img {
+  position: relative;
+  @include breakpoint(medium) {
+    position: fixed;
+    width: auto;
+    height: 100vh;
+  }
+  width: 100vw;
+  height: 50vh;
+  object-fit: cover;
 }
 </style>
