@@ -101,6 +101,7 @@ export default {
 
 .is-closed .accordian-icon:after{
     font-family: 'yr-icons';
+    font-size: 50%;
     content: "\e900";
     position: relative;
     pointer-events: none;
@@ -108,6 +109,7 @@ export default {
 
 .is-primary .accordian-icon:after{
     font-family: 'yr-icons';
+    font-size: 50%;
     content: "\e901";
     position: relative;
     pointer-events: none;
