@@ -9,7 +9,7 @@
     >
       <div
         class="title-source"
-        v-html=" accordianTitle "
+        v-html="accordianTitle"
       /> <span
         class="accordian-icon"
         :class="accordianClasses"
@@ -20,7 +20,7 @@
         <div class="accordian-content">
           <div
             class="body-source"
-            v-html=" accordianBody "
+            v-html="accordianBody"
           />
         </div>
       </div>
@@ -84,6 +84,7 @@ export default {
 .is-closed .accordian-border {
   transition: max-height 0.2s ease;
   background-color: $green;
+  padding: 0rem;
 }
 .accordian-border {
   transition: max-height 0.2s ease;
@@ -94,7 +95,7 @@ export default {
   cursor: pointer;
   display: inline-flex;
   justify-content: space-between;
-  padding: 0.4rem;
+  padding: 0.3rem;
   background-color: $green;
 }
 
@@ -115,12 +116,12 @@ export default {
 }
 
 .is-primary .accordian-body {
-  padding: 0.3rem;
+  padding: 0rem;
 }
 
 .accordian-body {
   background-color: $white;
   overflow-x: hidden;
-  transition: max-height 0.2s ease ;
+  transition: max-height 0.2s ease;
 }
 </style>

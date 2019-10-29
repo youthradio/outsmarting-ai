@@ -26,9 +26,9 @@
         >
       </div>
     </div>
-    <ShareContainer />
+    <!-- <ShareContainer /> -->
     <!-- <RelatedPostsContainer /> -->
-    <FooterContainer />
+    <!-- <FooterContainer /> -->
   </div>
 </template>
 
@@ -40,16 +40,16 @@ import CommonUtils from '../mixins/CommonUtils'
 // import MapContainer from '~/components/Map/MapContainer'
 import HeaderContainer from '~/components/Header/HeaderContainer'
 import AccordianContainer from '~/components/Custom/AccordianContainer'
-import ShareContainer from '~/components/custom/ShareContainer'
-import FooterContainer from '~/components/Footer/FooterContainer'
+// import ShareContainer from '~/components/custom/ShareContainer'
+// import FooterContainer from '~/components/Footer/FooterContainer'
 
 export default {
   components: {
     // RelatedPostsContainer,
     // MapContainer,
     HeaderContainer,
-    ShareContainer,
-    FooterContainer,
+    // ShareContainer,
+    // FooterContainer,
     AccordianContainer
   },
   mixins: [
