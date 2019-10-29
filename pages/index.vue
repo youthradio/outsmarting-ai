@@ -133,9 +133,10 @@ grid-row-gap: 0px;
   position: relative;
   @include breakpoint (medium){
     position: fixed;
+    height: 100vh;
   }
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: fill;
 }
 </style>
