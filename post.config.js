@@ -1,6 +1,6 @@
 export default {
-  'baseURL': '/static-nuxt-template',
-  'title': 'Static Template Title',
+  'baseURL': '/outsmarting-ai',
+  'title': 'Outsmarting AI',
   'author': 'Static Author',
   'publishDate': 'Oct. 2, 2019',
   'location': 'Oakland, CA',

@@ -1,17 +1,30 @@
 <template>
-  <div>
-    <article class="accordian" :class="accordianClasses">
-      <div class="accordian-header" @click="toggleAccordion">
-        <div class="title-source" v-html=" accordianTitle " /> <span class="accordian-icon" :class="accordianClasses" />
-      </div>
-      <div class="accordian-border">
-        <div class="accordian-body">
-          <div class="accordian-content">
-            <div class="body-source" v-html=" accordianBody " />
-          </div>
+  <div
+    class="accordian"
+    :class="accordianClasses"
+  >
+    <div
+      class="accordian-header"
+      @click="toggleAccordion"
+    >
+      <div
+        class="title-source"
+        v-html="accordianTitle"
+      /> <span
+        class="accordian-icon"
+        :class="accordianClasses"
+      />
+    </div>
+    <div class="accordian-border">
+      <div class="accordian-body">
+        <div class="accordian-content">
+          <div
+            class="body-source"
+            v-html="accordianBody"
+          />
         </div>
       </div>
-    </article>
+    </div>
   </div>
 </template>
 
@@ -20,7 +33,7 @@ export default {
   props: {
     accordianTitle: {
       type: String,
-      require: false,
+      require: true,
       default: null
     },
     accordianBody: {
@@ -52,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/css/mixins';
+@import "~@/css/mixins";
 @import "~@/css/vars";
 
 /deep/ .accordian-header h3 {
@@ -63,25 +76,26 @@ export default {
   letter-spacing: 0.4px;
   font-size: 100%;
 }
-.accordian{
-    color: black;
-    padding: 0 0.3rem 0.3rem 0.3rem; // actually is just the content's border
+.accordian {
+  color: black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
-.is-closed .accordian-border{
-    transition: 0.2s ease all;
-    background-color: $green;
-    padding: 0rem;
+.is-closed .accordian-border {
+  transition: max-height 0.2s ease;
+  background-color: $green;
+  padding: 0rem;
 }
-.accordian-border{
-    transition: 0.2s ease all;
-    background-color: $green;
-    padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+.accordian-border {
+  transition: max-height 0.2s ease;
+  background-color: $green;
+  padding: 0.3rem;
 }
-.accordian-header{
+.accordian-header {
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   justify-content: space-between;
-  padding: 0.4rem;
+  padding: 0.3rem;
   background-color: $green;
 }
 
@@ -99,17 +113,17 @@ export default {
     pointer-events: none;
 }
 
-.is-closed .accordian-body{
+.is-closed .accordian-body {
   max-height: 0rem;
 }
 
-.is-primary .accordian-body{
-    padding: 0.3rem;
+.is-primary .accordian-body {
+  padding: 0rem;
 }
 
-.accordian-body{
-    background-color: $white;
-    overflow-x: hidden;
-    transition: 0.2s ease all;
+.accordian-body {
+  background-color: $white;
+  overflow-x: hidden;
+  transition: max-height 0.2s ease;
 }
 </style>
