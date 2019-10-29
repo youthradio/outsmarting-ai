@@ -86,13 +86,15 @@ export default {
 }
 
 .is-closed .accordian-icon:after{
-    content: '▾';
+    font-family: 'yr-icons';
+    content: "\e900";
     position: relative;
     pointer-events: none;
 }
 
 .is-primary .accordian-icon:after{
-    content: '▴';
+    font-family: 'yr-icons';
+    content: "\e901";
     position: relative;
     pointer-events: none;
 }
