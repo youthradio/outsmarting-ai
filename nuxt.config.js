@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import POSTCONFIG from './post.config'
 dotenv.config()
-process.env.DEBUG = 'nuxt:*'
+// process.env.DEBUG = 'nuxt:*'
 
 export default {
   mode: 'universal',

@@ -10,12 +10,14 @@
         <h2 class="body-header">
           OUTSMARTING AI
         </h2>
-        <p v-html="articleData.leading" />
-        <p v-html="articleData.leading2" />
-        <p v-html="articleData.leading3" />
+        <p
+          v-for="leading in articleData.leadings"
+          :key="leading"
+          v-html="cleanPtags(leading)"
+        />
         <AccordianContainer
-          v-for="article in articleData.sections"
-          :key="article.content"
+          v-for="(article, i) in articleData.sections"
+          :key="`${article}${i}`"
           :accordian-body="article.content"
           :accordian-title="article.title"
         />
@@ -74,7 +76,9 @@ export default {
   mounted () {
   },
   methods: {
-
+    cleanPtags (string) {
+      return string.replace(/<\/?p[^>]*>/g, '')
+    }
   }
 }
 </script>
