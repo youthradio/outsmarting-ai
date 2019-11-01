@@ -27,7 +27,7 @@
             v-for="item in articleData.wcyd"
             :key="item"
           >
-            <div v-html="item.title" />
+            <div class="ul-title" v-html="item.title" />
             <p v-html="cleanPtags(item.content)" />
           </li>
         </ol>
@@ -113,20 +113,28 @@ export default {
 .main-body {
   order: 2;
   background-color: $white;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   p,
   div {
     padding-right: 1.5rem;
+    margin-bottom: 0.4rem;
   }
   @include breakpoint(medium) {
     order: 1;
   }
 }
+
+/deep/ .ul-title h3{
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
 .body-header {
   width: 100%;
   border-bottom: 6px solid $green;
-  padding: 0;
+  padding: 1rem 0 0 0;
   line-height: 2rem;
 
   color: $green;
@@ -136,7 +144,7 @@ export default {
 .sub-header {
   display: inline-block;
   padding: 0.5rem 0.5rem;
-  margin: 0rem 0rem 1rem 0rem;
+  margin: 1rem 0rem 0rem 0rem;
   background-color: $green;
 
   color: #000;

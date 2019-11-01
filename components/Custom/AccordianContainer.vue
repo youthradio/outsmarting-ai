@@ -81,7 +81,6 @@ export default {
 .accordian {
   color: black;
   padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 .is-closed .accordian-border {
   transition: max-height 0.2s ease;
