@@ -99,6 +99,9 @@ export default {
   padding: 0.3rem;
   background-color: $green;
 }
+.body-source{
+  padding: 0.4rem;
+}
 
 .is-closed .accordian-icon:after{
     font-family: 'yr-icons';
