@@ -21,6 +21,16 @@
           :accordian-body="article.content"
           :accordian-title="article.title"
         />
+        <h2 class="body-header" v-html="articleData.subleading" />
+        <ol>
+          <li
+            v-for="item in articleData.wcyd"
+            :key="item"
+          >
+            <div v-html="item.title" />
+            <p v-html="cleanPtags(item.content)" />
+          </li>
+        </ol>
       </div>
       <div class="img-body">
         <img
@@ -74,6 +84,9 @@ export default {
     }
   },
   mounted () {
+
+  },
+  beforeMount () {
   },
   methods: {
     cleanPtags (string) {
@@ -147,5 +160,24 @@ export default {
   width: 100vw;
   height: 50vh;
   object-fit: cover;
+}
+
+ol {
+  list-style: none;
+  counter-reset: yr-counter;
+}
+
+ol li {
+  margin: 0 0 0.5rem 0;
+  counter-increment: yr-counter;
+  position: relative;
+}
+
+ol li:before{
+  position: absolute;
+  left: -1.3rem;
+  content: counter(yr-counter) " ";
+  color: $green;
+  font-weight: bold;
 }
 </style>

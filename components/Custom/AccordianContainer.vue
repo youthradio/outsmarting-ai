@@ -59,6 +59,7 @@ export default {
   },
   methods: {
     toggleAccordion () {
+      console.log('Testing')
       this.isOpen = !this.isOpen
     }
   }
