@@ -35,7 +35,7 @@
       <div class="img-body">
         <img
           class="article-img"
-          src="~/assets/images/article-bg.png"
+          src="~/assets/images/article-bg.jpg"
         >
       </div>
     </div>
