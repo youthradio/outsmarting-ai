@@ -126,7 +126,9 @@ export default {
 }
 
 /deep/ .ul-title h3{
-  padding: 0;
+  font-family: "Assistant";
+  line-height: 1rem;
+  padding: 0.25rem 0 0 0;
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -135,11 +137,17 @@ export default {
   width: 100%;
   border-bottom: 6px solid $green;
   padding: 1rem 0 0 0;
+  margin-bottom: 0.2rem;
   line-height: 2rem;
 
   color: $green;
   font-family: "Days Sans", sans-serif;
   letter-spacing: 0;
+
+  /deep/ p{
+  margin-bottom: 0.2rem;
+  line-height: 2rem;
+  }
 }
 .sub-header {
   display: inline-block;
