@@ -3,8 +3,15 @@
 // import fetch from 'node-fetch'
 import Gootenberg from 'gootenberg'
 import marked from 'marked'
+import createDOMPurify from 'dompurify'
+import { JSDOM } from 'jsdom'
 import credentials from './credentials.json'
 
+const DOMPurify = createDOMPurify(new JSDOM('').window)
+const configDOMPurify = {
+  ALLOWED_TAGS: ['a'],
+  KEEP_CONTENT: true
+}
 const DOC_ID = '139ekSlJaKsVcAlIbkOSqgPZ4lu0KgY9sSOk9hwOXvFY'
 // const DURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRaNDBN4NpVISkVvaKK_FPQSwRZorhpIKb0bsaPTm0gKwvVviTHvcpHJsr5erVrjpiPH9YZupinUljz/pub?gid=0&single=true&output=csv'
 
@@ -67,7 +74,7 @@ function markdown2html (data) {
         return
       }
       if (typeof obj[key] === 'string' || obj[key] instanceof String) {
-        obj[key] = marked(obj[key])
+        obj[key] = DOMPurify.sanitize(marked(obj[key]), configDOMPurify)
       }
     })
   }
