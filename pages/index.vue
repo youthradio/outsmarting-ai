@@ -2,6 +2,14 @@
 <template>
   <div class="container">
     <HeaderContainer />
+    <carousel>
+      <slide>
+        Slide 1 Content
+      </slide>
+      <slide>
+        Slide 2 Content
+      </slide>
+    </carousel>
     <div class="article-body">
       <div class="main-body">
         <h3 class="sub-header">
@@ -27,7 +35,7 @@
             v-for="item in articleData.wcyd"
             :key="item"
           >
-            <div class="ul-title" v-html="item.title" />
+            <h3 class="ul-title" v-html="item.title" />
             <p v-html="cleanPtags(item.content)" />
           </li>
         </ol>
@@ -125,7 +133,7 @@ export default {
   }
 }
 
-/deep/ .ul-title h3{
+.ul-title {
   font-family: "Assistant";
   line-height: 1rem;
   padding: 0.25rem 0 0 0;
