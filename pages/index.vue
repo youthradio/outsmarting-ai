@@ -11,9 +11,9 @@
           OUTSMARTING AI
         </h2>
         <p
-          v-for="leading in articleData.leadings"
-          :key="leading"
-          v-html="cleanPtags(leading)"
+          v-for="(leading, i) in articleData.leadings"
+          :key="`${leading}${i}`"
+          v-html="leading"
         />
         <AccordianContainer
           v-for="(article, i) in articleData.sections"
@@ -27,8 +27,8 @@
             v-for="item in articleData.wcyd"
             :key="item"
           >
-            <div class="ul-title" v-html="item.title" />
-            <p v-html="cleanPtags(item.content)" />
+            <h3 class="ul-title" v-html="item.title" />
+            <p v-html="item.content" />
           </li>
         </ol>
       </div>
@@ -89,9 +89,7 @@ export default {
   beforeMount () {
   },
   methods: {
-    cleanPtags (string) {
-      return string.replace(/<\/?p[^>]*>/g, '')
-    }
+
   }
 }
 </script>
@@ -125,10 +123,9 @@ export default {
   }
 }
 
-/deep/ .ul-title h3{
-  font-family: "Assistant";
-  line-height: 1rem;
-  padding: 0.25rem 0 0 0;
+/deep/ .ul-title {
+  padding-top: 0;
+  padding-bottom: 1rem;
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0.5px;

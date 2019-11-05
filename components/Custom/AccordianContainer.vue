@@ -8,10 +8,12 @@
       class="accordian-header"
       @click="toggleAccordion"
     >
-      <div
+      <h3
         class="title-source"
-        v-html="accordianTitle"
-      /> <span
+      >
+        {{ accordianTitle }}
+      </h3>
+      <span
         class="accordian-icon"
         :class="accordianClasses"
       />
