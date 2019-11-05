@@ -2,14 +2,6 @@
 <template>
   <div class="container">
     <HeaderContainer />
-    <carousel>
-      <slide>
-        Slide 1 Content
-      </slide>
-      <slide>
-        Slide 2 Content
-      </slide>
-    </carousel>
     <div class="article-body">
       <div class="main-body">
         <h3 class="sub-header">
@@ -18,6 +10,7 @@
         <h2 class="body-header">
           OUTSMARTING AI
         </h2>
+        <CarouselContainerBig />
         <p
           v-for="leading in articleData.leadings"
           :key="leading"
@@ -61,6 +54,7 @@ import CommonUtils from '../mixins/CommonUtils'
 // import MapContainer from '~/components/Map/MapContainer'
 import HeaderContainer from '~/components/Header/HeaderContainer'
 import AccordianContainer from '~/components/Custom/AccordianContainer'
+import CarouselContainerBig from '~/components/Custom/CarouselContainerBig'
 // import ShareContainer from '~/components/custom/ShareContainer'
 // import FooterContainer from '~/components/Footer/FooterContainer'
 
@@ -71,7 +65,8 @@ export default {
     HeaderContainer,
     // ShareContainer,
     // FooterContainer,
-    AccordianContainer
+    AccordianContainer,
+    CarouselContainerBig
   },
   mixins: [
     CommonUtils
