@@ -27,7 +27,13 @@
 
 <script>
 export default {
-  props: {},
+  props: {
+    containerTitle: {
+      type: String,
+      require: true,
+      default: null
+    }
+  },
   data () {},
   computed: {},
   methods: {}
