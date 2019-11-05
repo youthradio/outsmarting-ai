@@ -15,8 +15,8 @@
           :key="leading"
           v-html="cleanPtags(leading)"
         />
-        <CarouselContainerBig />
-        <CarouselContainerSmall />
+        <CarouselContainerBig per-page-num="2" />
+        <CarouselContainerBig small-items per-page-num="5" />
       </div>
       <div class="img-body">
         <img
@@ -39,7 +39,6 @@ import CommonUtils from '../mixins/CommonUtils'
 // import MapContainer from '~/components/Map/MapContainer'
 import HeaderContainer from '~/components/Header/HeaderContainer'
 import CarouselContainerBig from '~/components/Custom/CarouselContainerBig'
-import CarouselContainerSmall from '~/components/Custom/CarouselContainerSmall'
 // import ShareContainer from '~/components/custom/ShareContainer'
 // import FooterContainer from '~/components/Footer/FooterContainer'
 
@@ -50,8 +49,7 @@ export default {
     HeaderContainer,
     // ShareContainer,
     // FooterContainer,
-    CarouselContainerBig,
-    CarouselContainerSmall
+    CarouselContainerBig
   },
   mixins: [
     CommonUtils

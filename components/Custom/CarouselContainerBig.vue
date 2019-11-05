@@ -1,5 +1,5 @@
 <template>
-  <carousel>
+  <carousel :per-page="perPageNum">
     <slide
       v-for="(carouselArticle, i) in testObjects"
       :key="`${carouselArticle}${i}`"
@@ -8,7 +8,7 @@
       <div class="image-container">
         <img :src="carouselArticle.articleImg" class="carousel-image">
       </div>
-      <h3 class="carousel-title-underline" v-html="carouselArticle.articleTitle" />
+      <h3 :class="{ 'carousel-title-underline' : !smallItems }" v-html="carouselArticle.articleTitle" />
       <p class="carousel-date" v-html="carouselArticle.articleDate" />
     </slide>
   </carousel>
@@ -31,6 +31,15 @@ export default {
       type: String,
       require: true,
       default: null
+    },
+    perPageNum: {
+      type: String,
+      require: true,
+      default: null
+    },
+    smallItems: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -60,6 +69,8 @@ export default {
     font-family: "Assistant";
     margin: 0.5rem 0.5rem 0.5rem 0rem;
     cursor: pointer;
+}
+.carousel-item-big h3 {
 }
 
 .image-container{
