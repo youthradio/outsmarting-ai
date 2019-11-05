@@ -41,7 +41,7 @@ export default {
 
 .carousel-item-big{
     font-family: "Assistant";
-    padding: 0.5rem 0.5rem 0.5rem 0rem;
+    margin: 0.5rem 0.5rem 0.5rem 0rem;
     cursor: pointer;
 }
 

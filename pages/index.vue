@@ -109,7 +109,7 @@ export default {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   @include breakpoint(medium) {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
 }
@@ -124,7 +124,7 @@ export default {
     margin-bottom: 0.4rem;
   }
   @include breakpoint(medium) {
-    order: 1;
+    order: 2;
   }
 }
 
@@ -166,15 +166,12 @@ export default {
   order: 1;
   z-index: 0;
   @include breakpoint(medium) {
-    order: 2;
+    order: 1;
   }
 }
 .article-img {
   position: relative;
   @include breakpoint(medium) {
-    position: fixed;
-    width: auto;
-    height: 100vh;
   }
   width: 100vw;
   height: 50vh;
