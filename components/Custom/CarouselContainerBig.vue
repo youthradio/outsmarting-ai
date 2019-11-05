@@ -1,34 +1,28 @@
 <template>
-  <carousel>
-    <slide class="carousel-item-big">
-      <div class="image-container">
-        <img src="https://picsum.photos/900" class="carousel-image">
-      </div>
-      <h3 class="carousel-title-underline">
-        Test Title
-      </h3>
-      <p class="carousel-date">
-        Test Date 2019
-      </p>
-    </slide>
-    <slide class="carousel-item-big">
-      <div class="image-container">
-        <img src="https://picsum.photos/900" class="carousel-image">
-        <h3 class="carousel-title-underline">
-          Test Title
-        </h3>
-        <p class="carousel-date">
-          Test Date 2019
-        </p>
-      </div>
-    </slide>
-  </carousel>
+  <slide class="carousel-item-big">
+    <div class="image-container">
+      <img :src="carouselItemImgSrc" class="carousel-image">
+    </div>
+    <h3 class="carousel-title-underline" v-html="carouselItemTitle" />
+    <p class="carousel-date" v-html="carouselDate" />
+    </p>
+  </slide>
 </template>
 
 <script>
 export default {
   props: {
-    containerTitle: {
+    carouselItemTitle: {
+      type: String,
+      require: true,
+      default: null
+    },
+    carouselItemImgSrc: {
+      type: String,
+      require: true,
+      default: null
+    },
+    carouselDate: {
       type: String,
       require: true,
       default: null
