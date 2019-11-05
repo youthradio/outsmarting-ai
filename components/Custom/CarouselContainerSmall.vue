@@ -1,5 +1,5 @@
 <template>
-  <carousel>
+  <carousel :per-page="5">
     <slide
       v-for="(carouselArticle, i) in testObjects"
       :key="`${carouselArticle}${i}`"
@@ -63,7 +63,7 @@ export default {
 }
 
 .image-container{
-    max-width: 100%;
+    max-width: 80%;
     img{
       max-width: 100%; // 100 percent of 100 percent lol
     }
@@ -72,6 +72,5 @@ export default {
 .carousel-title-underline{
     line-height: 0;
     padding: 1.2rem 0rem 1rem 0rem;
-    border-bottom: 3px solid black;
 }
 </style>

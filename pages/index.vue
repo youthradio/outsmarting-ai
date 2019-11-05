@@ -16,22 +16,7 @@
           v-html="cleanPtags(leading)"
         />
         <CarouselContainerBig />
-        <AccordianContainer
-          v-for="(article, i) in articleData.sections"
-          :key="`${article}${i}`"
-          :accordian-body="article.content"
-          :accordian-title="article.title"
-        />
-        <h2 class="body-header" v-html="articleData.subleading" />
-        <ol>
-          <li
-            v-for="item in articleData.wcyd"
-            :key="item"
-          >
-            <h3 class="ul-title" v-html="item.title" />
-            <p v-html="cleanPtags(item.content)" />
-          </li>
-        </ol>
+        <CarouselContainerSmall />
       </div>
       <div class="img-body">
         <img
@@ -53,8 +38,8 @@ import CommonUtils from '../mixins/CommonUtils'
 // import RelatedPostsContainer from '~/components/RelatedPosts/RelatedPostsContainer'
 // import MapContainer from '~/components/Map/MapContainer'
 import HeaderContainer from '~/components/Header/HeaderContainer'
-import AccordianContainer from '~/components/Custom/AccordianContainer'
 import CarouselContainerBig from '~/components/Custom/CarouselContainerBig'
+import CarouselContainerSmall from '~/components/Custom/CarouselContainerSmall'
 // import ShareContainer from '~/components/custom/ShareContainer'
 // import FooterContainer from '~/components/Footer/FooterContainer'
 
@@ -65,8 +50,8 @@ export default {
     HeaderContainer,
     // ShareContainer,
     // FooterContainer,
-    AccordianContainer,
-    CarouselContainerBig
+    CarouselContainerBig,
+    CarouselContainerSmall
   },
   mixins: [
     CommonUtils
