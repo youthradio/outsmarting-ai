@@ -1,12 +1,18 @@
 <template>
-  <slide class="carousel-item-big">
-    <div class="image-container">
-      <img :src="carouselItemImgSrc" class="carousel-image">
-    </div>
-    <h3 class="carousel-title-underline" v-html="carouselItemTitle" />
-    <p class="carousel-date" v-html="carouselDate" />
-    </p>
-  </slide>
+  <carousel>
+    <slide
+      v-for="(carouselArticle, i) in testObjects"
+      :key="`${carouselArticle}${i}`"
+      class="carousel-item-big"
+    >
+      <div class="image-container">
+        <img :src="carouselArticle.articleImg" class="carousel-image">
+      </div>
+      <h3 class="carousel-title-underline" v-html="carouselArticle.articleTitle" />
+      <p class="carousel-date" v-html="carouselArticle.articleDate" />
+      </p>
+    </slide>
+  </carousel>
 </template>
 
 <script>
@@ -28,7 +34,19 @@ export default {
       default: null
     }
   },
-  data () {},
+  data () {
+    return {
+      testObjects: [
+
+        { articleTitle: 'Title 1', articleDate: 'october 22', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 2', articleDate: 'may 42', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 3', articleDate: 'june 4', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 4', articleDate: 'oct 4', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 5', articleDate: 'june 4', articleImg: 'https://www.fillmurray.com/700/700' }
+
+      ]
+    }
+  },
   computed: {},
   methods: {}
 }

@@ -15,13 +15,7 @@
           :key="leading"
           v-html="cleanPtags(leading)"
         />
-        <carousel>
-          <CarouselContainerBig
-            v-for="(carouselArticle, i) in testObjects"
-            :key="`${carouselArticle}${i}`"
-            :carousel-item-title="carouselArticle.articleTitle"
-          />
-        </carousel>
+        <CarouselContainerBig />
         <AccordianContainer
           v-for="(article, i) in articleData.sections"
           :key="`${article}${i}`"
@@ -79,13 +73,6 @@ export default {
   ],
   data () {
     return {
-      testObjects: [
-
-        { articleTitle: 'Title 1', articleDate: 'october 22' },
-        { articleTitle: 'Title 2', articleDate: 'may 42' },
-        { articleTitle: 'Title 3', articleDate: 'june 4' }
-
-      ]
     }
   },
   computed: {
