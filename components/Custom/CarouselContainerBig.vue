@@ -1,7 +1,7 @@
 <template>
   <carousel :per-page="perPageNum">
     <slide
-      v-for="(carouselArticle, i) in testObjects"
+      v-for="(carouselArticle, i) in coreData"
       :key="`${carouselArticle}${i}`"
       class="carousel-item-big"
     >
@@ -17,6 +17,11 @@
 <script>
 export default {
   props: {
+    coreData: {
+      type: Array,
+      require: true,
+      default: null
+    },
     carouselItemTitle: {
       type: String,
       require: true,
@@ -44,15 +49,6 @@ export default {
   },
   data () {
     return {
-      testObjects: [
-
-        { articleTitle: 'Title 1', articleDate: 'october 22', articleImg: 'https://www.fillmurray.com/700/700' },
-        { articleTitle: 'Title 2', articleDate: 'may 42', articleImg: 'https://www.fillmurray.com/700/700' },
-        { articleTitle: 'Title 3', articleDate: 'june 4', articleImg: 'https://www.fillmurray.com/700/700' },
-        { articleTitle: 'Title 4', articleDate: 'oct 4', articleImg: 'https://www.fillmurray.com/700/700' },
-        { articleTitle: 'Title 5', articleDate: 'june 4', articleImg: 'https://www.fillmurray.com/700/700' }
-
-      ]
     }
   },
   computed: {},
@@ -66,11 +62,18 @@ export default {
 @import "~@/css/mixins";
 
 .carousel-item-big{
-    font-family: "Assistant";
     margin: 0.5rem 0.5rem 0.5rem 0rem;
     cursor: pointer;
 }
 .carousel-item-big h3 {
+    font-family: "Assistant";
+    font-size: 1rem;
+    font-weight: 800;
+}
+.carousel-item-big p {
+    font-family: "Assistant";
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .image-container{

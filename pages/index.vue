@@ -15,8 +15,8 @@
           :key="leading"
           v-html="cleanPtags(leading)"
         />
-        <CarouselContainerBig per-page-num="2" />
-        <CarouselContainerBig small-items per-page-num="5" />
+        <CarouselContainerBig :core-data="testObjects1" per-page-num="2" />
+        <CarouselContainerBig :core-data="testObjects2" small-items per-page-num="5" />
       </div>
       <div class="img-body">
         <img
@@ -56,6 +56,24 @@ export default {
   ],
   data () {
     return {
+      testObjects1: [
+
+        { articleTitle: 'Title 1', articleDate: 'october 22', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 2', articleDate: 'may 42', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 3', articleDate: 'june 4', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 4', articleDate: 'oct 4', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 5', articleDate: 'june 4', articleImg: 'https://www.fillmurray.com/700/700' }
+
+      ],
+      testObjects2: [
+
+        { articleTitle: 'Title 6', articleDate: 'october 22', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 7', articleDate: 'may 42', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 8', articleDate: 'june 4', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 9', articleDate: 'oct 4', articleImg: 'https://www.fillmurray.com/700/700' },
+        { articleTitle: 'Title 10', articleDate: 'june 4', articleImg: 'https://www.fillmurray.com/700/700' }
+
+      ]
     }
   },
   computed: {
