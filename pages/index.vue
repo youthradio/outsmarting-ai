@@ -15,8 +15,8 @@
           :key="leading"
           v-html="cleanPtags(leading)"
         />
-        <CarouselContainerBig :core-data="testObjects1" per-page-num="2" />
-        <CarouselContainerBig :core-data="testObjects2" small-items per-page-num="5" />
+        <CarouselContainer :core-data="testObjects1" per-page-num="2" />
+        <CarouselContainer :core-data="testObjects2" small-items per-page-num="5" />
       </div>
       <div class="img-body">
         <img
@@ -25,9 +25,6 @@
         >
       </div>
     </div>
-    <!-- <ShareContainer /> -->
-    <!-- <RelatedPostsContainer /> -->
-    <!-- <FooterContainer /> -->
   </div>
 </template>
 
@@ -35,21 +32,13 @@
 
 import ArticleData from '../data/data.json'
 import CommonUtils from '../mixins/CommonUtils'
-// import RelatedPostsContainer from '~/components/RelatedPosts/RelatedPostsContainer'
-// import MapContainer from '~/components/Map/MapContainer'
 import HeaderContainer from '~/components/Header/HeaderContainer'
-import CarouselContainerBig from '~/components/Custom/CarouselContainerBig'
-// import ShareContainer from '~/components/custom/ShareContainer'
-// import FooterContainer from '~/components/Footer/FooterContainer'
+import CarouselContainer from '~/components/Custom/CarouselContainer'
 
 export default {
   components: {
-    // RelatedPostsContainer,
-    // MapContainer,
     HeaderContainer,
-    // ShareContainer,
-    // FooterContainer,
-    CarouselContainerBig
+    CarouselContainer
   },
   mixins: [
     CommonUtils

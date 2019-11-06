@@ -22,21 +22,6 @@ export default {
       require: true,
       default: null
     },
-    carouselItemTitle: {
-      type: String,
-      require: true,
-      default: null
-    },
-    carouselItemImgSrc: {
-      type: String,
-      require: true,
-      default: null
-    },
-    carouselDate: {
-      type: String,
-      require: true,
-      default: null
-    },
     perPageNum: {
       type: String,
       require: true,
