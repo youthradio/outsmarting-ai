@@ -60,7 +60,7 @@ export default {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded;',
-              'charset': 'UTF-8'
+              charset: 'UTF-8'
             },
             body: this.encode(data),
             mode: 'no-cors'
@@ -72,6 +72,7 @@ export default {
           })
         this.response = await res.json()
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error)
       }
     }

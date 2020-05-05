@@ -68,6 +68,11 @@ export default {
   mixins: [
     CommonUtils
   ],
+  asyncData (ctx) {
+    return {
+      articleData: ArticleData.content
+    }
+  },
   data () {
     return {
 
@@ -77,11 +82,6 @@ export default {
   },
   watch: {
 
-  },
-  asyncData (ctx) {
-    return {
-      articleData: ArticleData.content
-    }
   },
   mounted () {
 
